@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>下载 — ets_assistant · zhanjhn 工作室</title>
+<link rel="stylesheet" href="_assets/style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="logo">zhanjhn <span>工作室</span></div>
+    <nav>
+      <a href="index.html">首页</a>
+      <a href="download.html" class="active">下载</a>
+      <a href="guide.html">使用说明</a>
+      <a href="privacy.html">隐私协议</a>
+      <a href="terms.html">使用须知</a>
+      <a href="disclaimer.html">免责条款</a>
+    </nav>
+  </div>
+
+  <main>
+    <section>
+      <h2>下载 ets_assistant</h2>
+      <div class="note">本软件完全开源。你可以在项目仓库的 Release 页面获取最新版本。</div>
+      <div class="cards">
+        <div class="card">
+          <h3>GitHub Release</h3>
+          <p>前往 <a href="https://github.com/zhanjhn-studio/ets_assistant/release" target="_blank" rel="noopener">仓库 Release 页面</a> 下载已构建的发行包。</p>
+        </div>
+        <div class="card">
+          <h3>源码获取</h3>
+          <p>可将本仓库 <code>git clone</code> 到本地自行探究与构建，但必须遵循其许可证。</p>
+        </div>
+      </div>
+      <div class="warning">
+        <h4>⚠️ 下载须知</h4>
+        <ol>
+          <li>英语听说非常重要，请在使用本软件时保持应有的练习！！！</li>
+          <li>此软件仅限个人探索使用，禁止用于考试等场景！</li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand2">zhanjhn 工作室</div>
+    <p>ets_assistant · E听说辅助工具 · 仅供个人技术探索，禁止用于考试等场景</p>
+    <p>© <span id="year"></span> zhanjhn-studio. All rights reserved.</p>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

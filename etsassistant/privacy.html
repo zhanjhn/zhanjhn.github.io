@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>隐私协议 — ets_assistant · zhanjhn 工作室</title>
+<link rel="stylesheet" href="_assets/style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="logo">zhanjhn <span>工作室</span></div>
+    <nav>
+      <a href="index.html">首页</a>
+      <a href="download.html">下载</a>
+      <a href="guide.html">使用说明</a>
+      <a href="privacy.html" class="active">隐私协议</a>
+      <a href="terms.html">使用须知</a>
+      <a href="disclaimer.html">免责条款</a>
+    </nav>
+  </div>
+
+  <main>
+    <section>
+      <h2>隐私协议</h2>
+      <div class="note">生效日期：2026-08-28。使用本软件即表示您已阅读、理解并同意本协议全部内容。</div>
+
+      <h3>1. 我们收集什么</h3>
+      <p>本软件<b>不会</b>收集、上传或向任何第三方服务器发送您的个人信息。软件在运行过程中仅在您的本机设备上处理以下数据：</p>
+      <ul class="feat">
+        <li><b>ETS 本地数据</b>：读取 <code>%AppData%\ETS</code> 目录下由 E听说 客户端在本机生成的试卷与答案文件（如 <code>content.json</code> / <code>res.json</code> / <code>info.json</code>），用于本地展示。</li>
+        <li><b>录音数据</b>：自动跟读功能通过系统录音设备（默认为「立体声混音」或麦克风）采集音频，仅用于本地跟读流程判定，<b>不进行网络传输、不保存原始录音文件</b>（除非您手动开启调试保存）。</li>
+        <li><b>屏幕与模板</b>：为定位按钮，软件在本机对屏幕截图并进行 OpenCV 模板匹配；截图与模板仅留存于本地 <code>ets_assistant/pic/</code> 目录。</li>
+      </ul>
+
+      <h3>2. 数据存储与传输</h3>
+      <p>所有数据处理均在您的设备本地完成。本软件<b>不包含任何遥测、埋点、广告或后台联网上报机制</b>。若未来版本引入任何网络功能，将在更新日志中明确说明并重新征得您的同意。</p>
+
+      <h3>3. 所需系统权限</h3>
+      <ul class="feat">
+        <li><b>录音 / 麦克风权限</b>：用于采集跟读音频，可在系统设置中随时关闭。</li>
+        <li><b>屏幕捕获权限</b>：用于按钮模板匹配与自动点击（PyAutoGUI）。</li>
+        <li><b>管理员权限</b>：部分操作（如启用立体声混音、部署 DLL）需要提权；软件仅在您主动触发相关功能时请求。</li>
+        <li><b>文件系统读写</b>：读取 ETS 本地目录、写入模板图片与日志。</li>
+      </ul>
+
+      <h3>4. 第三方组件</h3>
+      <p>本软件依赖开源第三方库（如 OpenCV、PyAutoGUI、PyAudio、pywebview 等），其各自遵循对应开源许可证。我们不通过它们收集您的数据。详细依赖见项目 <code>requirements.txt</code>。</p>
+
+      <h3>5. 您的权利</h3>
+      <ul class="feat">
+        <li>您可以随时卸载本软件，并手动删除 <code>%AppData%\ETS</code> 与本软件目录以清除本地残留数据。</li>
+        <li>若您不同意本协议，请立即停止使用并删除本软件全部文件。</li>
+      </ul>
+
+      <h3>6. 联系我们</h3>
+      <p>如对本协议有疑问，可通过项目 <a href="https://github.com/zhanjhn-studio/ets_assistant/" target="_blank" rel="noopener">仓库 Issue</a> 反馈（提交时请注意保护个人隐私，勿上传含个人信息的截图）。</p>
+
+      <div class="warning">
+        <h4>⚠️ 重要提醒</h4>
+        <p>英语听说非常重要，请在使用本软件时保持应有的练习。本软件仅限个人探索使用，<b>禁止用于考试等场景</b>。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand2">zhanjhn 工作室</div>
+    <p>ets_assistant · E听说辅助工具 · 仅供个人技术探索，禁止用于考试等场景</p>
+    <p>© <span id="year"></span> zhanjhn-studio. All rights reserved.</p>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

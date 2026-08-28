@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>快速开始 — ets_assistant · zhanjhn 工作室</title>
+<link rel="stylesheet" href="_assets/style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="logo">zhanjhn <span>工作室</span></div>
+    <nav>
+      <a href="index.html">首页</a>
+      <a href="structure.html">结构</a>
+      <a href="start.html" class="active">快速开始</a>
+      <a href="faq.html">FAQ</a>
+      <a href="https://github.com/zhanjhn-studio/ets_assistant/" target="_blank" rel="noopener">仓库</a>
+    </nav>
+  </div>
+
+  <main>
+    <section>
+      <h2>快速开始</h2>
+      <pre><code># 1. 安装依赖（建议 Python 3.10）
+pip install -r ets_assistant/requirements.txt
+
+# 2. 启动（默认 PyWebView 超级前端）
+python -m ets_assistant
+# 或双击根目录 启动E听说助手.py
+
+# 3. 退回原 PyQt5 界面
+python -m ets_assistant --qt</code></pre>
+      <div class="note">
+        提示：自动跟读需在 <code>ets_assistant/pic/</code> 下准备四个模板图片
+        （<code>yuan.png</code> / <code>luyin.png</code> / <code>stop.png</code> / <code>next.png</code>），可在前端「模板管理」中截取。
+      </div>
+
+      <h3>启动</h3>
+      <p>双击运行根目录 <code>启动E听说助手.py</code>（PyQt5 图形启动器，自动提权 + 启用立体声混音 + 启动主程序，退出后恢复设备）。主程序默认进入 PyWebView 前端。</p>
+
+      <h3>依赖</h3>
+      <pre><code>pip install -r ets_assistant/requirements.txt</code></pre>
+      <p>其中 WebUI 需要 <code>pywebview</code>（会自动选用系统 Edge/Chromium 内核）。</p>
+
+      <h3>DLL 一键编译</h3>
+      <p>见 <code>ets_assistant/advanced/README.md</code>。需要：</p>
+      <ul>
+        <li>Visual Studio 2022（含 MSVC + CMake）</li>
+        <li><a href="https://github.com/microsoft/Detours" target="_blank" rel="noopener">Microsoft Detours</a>，并设置 <code>DETOURS_ROOT</code> 环境变量</li>
+      </ul>
+      <p>在前端「DLL 编译」面板点击一键编译即可（后端自动定位 VS 开发者命令环境并构建）。</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand2">zhanjhn 工作室</div>
+    <p>ets_assistant · E听说辅助工具 · 仅供个人技术探索，禁止用于考试等场景</p>
+    <p>© <span id="year"></span> zhanjhn-studio. All rights reserved.</p>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

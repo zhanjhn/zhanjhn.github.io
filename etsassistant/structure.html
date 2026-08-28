@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>项目结构 — ets_assistant · zhanjhn 工作室</title>
+<link rel="stylesheet" href="_assets/style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="logo">zhanjhn <span>工作室</span></div>
+    <nav>
+      <a href="index.html">首页</a>
+      <a href="structure.html" class="active">结构</a>
+      <a href="start.html">快速开始</a>
+      <a href="faq.html">FAQ</a>
+      <a href="https://github.com/zhanjhn-studio/ets_assistant/" target="_blank" rel="noopener">仓库</a>
+    </nav>
+  </div>
+
+  <main>
+    <section>
+      <h2>目录结构</h2>
+      <pre><code>fuckETS/
+├── README.md                # 本文件
+├── 启动E听说助手.py          # PyQt5 图形启动器（提权 + 立体声混音 + 启动主程序）
+├── enable_stereo_mix.ps1     # 立体声混音启用脚本（PowerShell，输出 JSON）
+├── ets_assistant/
+│   ├── __main__.py           # 启动入口（默认 PyWebView，--qt 回退 PyQt5）
+│   ├── automation.py         # 自动跟读核心（OpenCV 模板匹配 + PyAutoGUI + PyAudio）
+│   ├── answer_reader.py      # 试卷 / 答案读取（解析 %Appdata%\ETS 下的 json）
+│   ├── audio_control.py      # 录音设备枚举与立体声混音切换
+│   ├── env_check.py          # 运行环境自检（Python / 依赖 / 立体声混音）
+│   ├── main_window.py        # PyQt5 界面
+│   ├── webui/                # PyWebView 超级前端
+│   │   ├── index.html        # 玻璃拟态前端界面
+│   │   └── api.py            # 后端 BackendAPI（window.pywebview.api 桥接）
+│   ├── advanced/             # 高级模块：winmm.dll 劫持（实验性 / 高风险）
+│   │   ├── winmm_hook.cpp    # 导出表转发 + Detours 挂钩
+│   │   ├── CMakeLists.txt    # CMake 构建配置
+│   │   ├── build_dll.py      # 一键编译执行器（vswhere + cmake）
+│   │   ├── deploy_dll.py     # 部署 / 卸载到 ETS 目录
+│   │   └── README.md         # 高级模块说明
+│   ├── pic/                  # 模板图片目录（yuan/luyin/stop/next.png）
+│   └── requirements.txt      # Python 依赖
+└── ets-automation.zip        # 打包备份</code></pre>
+    </section>
+
+    <section>
+      <h2>模块说明</h2>
+      <table>
+        <thead><tr><th>模块</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr><td><code>automation.py</code></td><td>自动跟读：循环「播放原文 → 录音 → 跟读 → 停止 → 下一个」，自动检测按钮。</td></tr>
+          <tr><td><code>answer_reader.py</code></td><td>读取 <code>%Appdata%\ETS</code> 下已下载试卷，结构化解析 <code>content.json</code> / <code>res.json</code> / <code>info.json</code>。</td></tr>
+          <tr><td><code>audio_control.py</code></td><td>用 pyaudio 枚举录音设备，识别并切换「立体声混音」，操作由改进版 PowerShell 脚本完成。</td></tr>
+          <tr><td><code>env_check.py</code></td><td>启动前自检 Python 版本、依赖、立体声混音状态，并给出提示。</td></tr>
+          <tr><td><code>webui/</code></td><td>默认前端：HTML/CSS/JS 界面 + Python 后端 API，含环境仪表盘、答案、立体声混音、DLL 面板。</td></tr>
+          <tr><td><code>advanced/</code></td><td>可选的高风险 DLL 劫持框架（默认不编译、不部署）。</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand2">zhanjhn 工作室</div>
+    <p>ets_assistant · E听说辅助工具 · 仅供个人技术探索，禁止用于考试等场景</p>
+    <p>© <span id="year"></span> zhanjhn-studio. All rights reserved.</p>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

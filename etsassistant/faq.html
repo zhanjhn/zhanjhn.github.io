@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>常见问题 — ets_assistant · zhanjhn 工作室</title>
+<link rel="stylesheet" href="_assets/style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="logo">zhanjhn <span>工作室</span></div>
+    <nav>
+      <a href="index.html">首页</a>
+      <a href="structure.html">结构</a>
+      <a href="start.html">快速开始</a>
+      <a href="faq.html" class="active">FAQ</a>
+      <a href="https://github.com/zhanjhn-studio/ets_assistant/" target="_blank" rel="noopener">仓库</a>
+    </nav>
+  </div>
+
+  <main>
+    <section>
+      <h2>常见问题（FAQ）</h2>
+      <div class="faq">
+        <p><b>Q：立体声混音检测不到？</b><br/>
+        A：部分声卡默认隐藏该设备，请在「控制面板 → 声音 → 录制」中右键空白处勾选「显示禁用的设备」，启用「立体声混音」后重试；前端会自动识别乱码/截断的设备名。</p>
+        <p><b>Q：答案面板看不到内容？</b><br/>
+        A：ETS 仅在本机下载过该试卷后才会在 <code>%Appdata%\ETS</code> 生成数据。请先在正常使用 E听说 时打开对应试卷，再回到本工具刷新答案面板。</p>
+        <p><b>Q：DLL 编译失败？</b><br/>
+        A：需安装 Visual Studio 2022（含 MSVC + CMake）与 <a href="https://github.com/microsoft/Detours" target="_blank" rel="noopener">Microsoft Detours</a>，并设置 <code>DETOURS_ROOT</code> 环境变量。详见 <code>ets_assistant/advanced/README.md</code>。</p>
+        <p><b>Q：PyWebView 打不开界面？</b><br/>
+        A：WebUI 依赖系统 Edge/Chromium 内核（WebView2），请确认已安装；否则用 <code>--qt</code> 回退 PyQt5 界面。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>许可证</h2>
+      <p>本项目基于其对应许可证开源，二次分发与修改须遵循原许可证条款。</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand2">zhanjhn 工作室</div>
+    <p>ets_assistant · E听说辅助工具 · 仅供个人技术探索，禁止用于考试等场景</p>
+    <p>© <span id="year"></span> zhanjhn-studio. All rights reserved.</p>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

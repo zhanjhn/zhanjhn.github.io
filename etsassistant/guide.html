@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>使用说明 — ets_assistant · zhanjhn 工作室</title>
+<link rel="stylesheet" href="_assets/style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="logo">zhanjhn <span>工作室</span></div>
+    <nav>
+      <a href="index.html">首页</a>
+      <a href="download.html">下载</a>
+      <a href="guide.html" class="active">使用说明</a>
+      <a href="privacy.html">隐私协议</a>
+      <a href="terms.html">使用须知</a>
+      <a href="disclaimer.html">免责条款</a>
+    </nav>
+  </div>
+
+  <main>
+    <section>
+      <h2>使用说明</h2>
+      <div class="note">附使用说明如下。此仓库也可 git 到本地进行其他探究，但必须遵循其许可证。</div>
+      <ol>
+        <li>以<b>管理员身份</b>运行本程序（避免 PyAutoGUI 点击失败）。</li>
+        <li>将系统默认<b>录音设备</b>设为「立体声混音」（控制面板 → 声音 → 录制）。</li>
+        <li>打开 E听说 进入跟读作业界面，窗口不被遮挡、单显示器。</li>
+        <li>在「模板管理」页依次截取四个按钮图片（播放原文 / 开始录音 / 停止录音 / 下一个）。</li>
+        <li>回到「自动跟读」页点击「开始」。</li>
+      </ol>
+      <p>更详细的环境准备与命令请见 <a href="start.html">快速开始</a> 页面。</p>
+      <p class="note">本页面为模板占位，正式发布前可补充截图与更细致的操作指引。</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand2">zhanjhn 工作室</div>
+    <p>ets_assistant · E听说辅助工具 · 仅供个人技术探索，禁止用于考试等场景</p>
+    <p>© <span id="year"></span> zhanjhn-studio. All rights reserved.</p>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

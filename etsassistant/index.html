@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ets_assistant · E听说辅助工具 — zhanjhn 工作室</title>
+<link rel="stylesheet" href="_assets/style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="logo">zhanjhn <span>工作室</span></div>
+    <nav>
+      <a href="index.html" class="active">首页</a>
+      <a href="structure.html">结构</a>
+      <a href="start.html">快速开始</a>
+      <a href="guide.html">使用说明</a>
+      <a href="faq.html">FAQ</a>
+      <a href="https://github.com/zhanjhn-studio/ets_assistant/" target="_blank" rel="noopener">仓库</a>
+    </nav>
+  </div>
+
+  <header class="hero">
+    <div class="badge">zhanjhn 工作室 · 开源项目</div>
+    <h1>ets_assistant · E听说辅助工具</h1>
+    <p>[CN] ets_assistant 一个关于 E听说的辅助工具，详见项目文档。</p>
+    <div class="brand">由 <span>zhanjhn 工作室</span> 维护</div>
+    <div class="enter">
+      <a href="start.html">快速开始 →</a>
+      <a href="structure.html">项目结构</a>
+      <a href="faq.html">常见问题</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="warning">
+      <h4>⚠️ 使用须知 / 免责声明</h4>
+      <ol>
+        <li>英语听说非常重要，请在使用本软件时保持应有的练习！！！</li>
+        <li>此软件仅限个人探索使用，禁止用于考试等场景！</li>
+        <li>关于 ets_assistant 项目的所有反馈请提交至 <a href="https://github.com/zhanjhn-studio/ets_assistant/" target="_blank" rel="noopener">仓库</a> 的 issue（提交 issue 等将截图上传时请注意保护您的个人隐私）进行反馈。</li>
+        <li>此软件完全开源，下载软件请前往 <a href="download.html">此处</a> 下载。</li>
+        <li>使用本软件默认已知晓其 <a href="privacy.html">隐私协议</a> 与其 <a href="terms.html">使用须知</a>。</li>
+        <li>我们的 <a href="disclaimer.html">免责条款</a>。</li>
+        <li>附使用说明，请点击 <a href="guide.html">这里</a>，此仓库可 git 到本地进行其他探究，但必须遵循其许可证。</li>
+      </ol>
+    </div>
+
+    <section>
+      <h2>什么是 ets_assistant?</h2>
+      <div class="note">
+        ets_assistant 是一个用于 E听说 的辅助 / 自动化工具，支持自动跟读、试卷答案查看、立体声混音管理与 DLL 一键编译。
+      </div>
+
+      <h3>功能</h3>
+      <ul class="feat">
+        <li>自动跟读（OpenCV 模板匹配 + PyAutoGUI + PyAudio 录音）</li>
+        <li>试卷 / 答案查看（读取 <code>%Appdata%\ETS</code>）</li>
+        <li>立体声混音自动启用与恢复（用于系统声音回录）</li>
+        <li>高级模块：winmm.dll 搜索顺序劫持框架（Detours Hook，实验性 / 高风险）</li>
+      </ul>
+
+      <h3>界面</h3>
+      <p>提供两套前端：</p>
+      <ol>
+        <li><b>PyWebView 超级前端（默认）</b>：基于 WebEngine 渲染的现代 HTML/CSS/JS 界面，前后端分离，后端为 Python 类（<code>ets_assistant/webui/api.py</code>）。支持环境仪表盘、答案查看、立体声混音、<b>DLL 一键编译</b>等面板。</li>
+        <li>原 PyQt5 界面：运行 <code>python -m ets_assistant --qt</code> 启用。</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand2">zhanjhn 工作室</div>
+    <p>ets_assistant · E听说辅助工具 · 仅供个人技术探索，禁止用于考试等场景</p>
+    <p>© <span id="year"></span> zhanjhn-studio. All rights reserved.</p>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
